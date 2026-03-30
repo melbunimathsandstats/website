@@ -38,3 +38,30 @@ author_profile: true
 {% include feature_row %}
 </div>
 
+Events coming up
+<script src='https://cdn.jsdelivr.net/npm/rrule/dist/es5/rrule.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@fullcalendar/rrule/index.global.min.js'></script>
+
+<div id="calendar"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const calendarEl = document.getElementById('calendar');
+
+  fetch('assets/events.json')
+    .then(r => r.json())
+    .then(events => {
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'listMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,listMonth'
+        },
+        events: events
+      });
+      calendar.render();
+    });
+});
+</script>

@@ -1,16 +1,14 @@
 main:
-  - title: "Quick-Start Guide"
-    url: /docs/quick-start-guide/
-  - title: "Posts"
+  - title: "About"
     url: /year-archive/
-  - title: "Categories"
+  - title: "Weekly events"
     url: /categories/
-  - title: "Tags"
+  - title: "Seminars"
     url: /tags/
-  - title: "Pages"
+  - title: "The MUMS room"
     url: /page-archive/
-  - title: "Collections"
+  - title: "Archive"
     url: /collection-archive/
-  - title: "External Link"
+  - title: "???"
     url: https://google.com
     target: _blank

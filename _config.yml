@@ -170,6 +170,7 @@ include:
   - .htaccess
   - _pages
   - _posts
+  - _events
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -330,3 +331,10 @@ defaults:
       comments: # true
       share: true
       related: true
+
+#collections
+collections:
+  events:
+    output: true
+    permalink: /events/:path/
+    title: Events
