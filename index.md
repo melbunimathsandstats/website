@@ -34,15 +34,22 @@ sponsors:
   - image_path: assets/umsu.png
     excerpt: UMSU affiliated club
   - image_path: assets/janest.png
-    excerpt: Jane Street is  ???
+    excerpt: Jane Street
   - image_path: assets/sponsor.png
-    excerpt: Blah blah
+    excerpt: IMC
+sponsors2:
+  - image_path: assets/umsu.png
+    excerpt: SIG
+  - image_path: assets/janest.png
+    excerpt: Trader
+  - image_path: assets/sponsor.png
+    excerpt: h
 ---
 
 <div style="--teaser-height: 250px">
 {% include feature_row %}
 </div>
-Event calendar
+## Event calendar
 <iframe id="cal-frame" style="width:100%; height:680px; border:none;"></iframe>
 
 <script>
@@ -52,6 +59,7 @@ const html = `
 <head>
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.css' rel='stylesheet' />
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js'><\/script>
+  <script src="events.js"><\/script>
   <style>
     body { margin: 0; padding: 0; font-family: sans-serif; }
     #calendar { height: 670px; padding: 10px; }
@@ -62,14 +70,18 @@ const html = `
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
-        initialView: 'dayGridMonth',
+initialView: 'dayGridMonth',
         height: 650,
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,listWeek'
         },
-        events: []
+        events: EVENTS,
+		eventClick: function(info) {
+			info.jsEvent.preventDefault();
+			window.open(info.event.url, '_blank');
+		}
       });
       calendar.render();
     });
@@ -80,7 +92,7 @@ const html = `
 
 document.getElementById('cal-frame').srcdoc = html;
 </script>
-Our sponsors:
-<div style="--teaser-height: 250px>
+## Our sponsors
+<div style="--teaser-height: 250px">
 {% include feature_row id="sponsors" %}
 </div>

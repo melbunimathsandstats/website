@@ -42,7 +42,7 @@ sponsors:
 <div style="--teaser-height: 250px">
 {% include feature_row %}
 </div>
-Event calendar
+## Event calendar
 <iframe id="cal-frame" style="width:100%; height:680px; border:none;"></iframe>
 
 <script>
@@ -62,7 +62,7 @@ const html = `
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
-        initialView: 'dayGridMonth',
+initialView: 'dayGridMonth',
         height: 650,
         headerToolbar: {
           left: 'prev,next today',
@@ -80,7 +80,7 @@ const html = `
 
 document.getElementById('cal-frame').srcdoc = html;
 </script>
-Our sponsors:
-<div style="--teaser-height: 250px>
+## Our sponsors
+<div style="--teaser-height: 250px">
 {% include feature_row id="sponsors" %}
 </div>
