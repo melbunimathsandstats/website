@@ -1,11 +1,10 @@
 ---
 ---
-
 @import "minimal-mistakes/skins/default";
 @import "minimal-mistakes";
 
 .feature__item .archive__item-teaser {
-  height: var(--teaser-height, 200px);
+  height: var(--teaser-height, 300px);
   overflow: hidden;
   img { width: 100%; height: 100%; object-fit: cover; }
 }
@@ -13,4 +12,106 @@
 p > img:only-child {
   display: block;
   margin-inline: auto; // logical-property shorthand for left+right auto
+}
+
+.event-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.event-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-card__image img {
+  transform: scale(1.04);
+}
+
+
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+
+// Sponsors
+
+.sponsors__tier {
+  margin-bottom: 2.5rem;
+}
+
+.sponsors__tier-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+
+  span {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    white-space: nowrap;
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+  }
+}
+
+.sponsors__grid {
+  display: grid;
+  gap: 12px;
+
+  &--gold   { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  &--silver { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  &--bronze { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+}
+
+.sponsors__card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+
+  &--gold   { padding: 1.75rem 1.5rem; }
+  &--silver { padding: 1.25rem 1rem; }
+  &--bronze { padding: 1rem 0.75rem; }
+
+  &:hover {
+    border-color: #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-decoration: none;
+  }
+}
+
+.sponsors__logo {
+  object-fit: contain;
+
+  &--gold   { width: 120px; height: 56px; }
+  &--silver { width: 88px;  height: 40px; }
+  &--bronze { width: 64px;  height: 32px; }
+}
+
+.sponsors__name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+
+  &--bronze { font-size: 0.75rem; }
 }

@@ -1,0 +1,35 @@
+- name: School of Maths and Stats
+  tier: aff
+  url: google.com
+  logo: assets/unimelb_logo.avif
+  
+- name: UMSU
+  tier: aff
+  url: https://umsu.unimelb.edu.au/buddy-up/clubs/clubs-listing/join/mums/
+  logo: assets/umsu_logo.avif
+
+- name: Jane Street
+  tier: gold
+  url: https://example.com
+  logo: assets/jane_st_logo.avif
+  
+- name: IMC
+  tier: gold
+  url: https://example.com
+  logo: assets/imc_logo.avif
+  
+- name: SIG Susquehanna
+  tier: gold
+  url: https://example.com
+  logo: assets/sig_logo.avif
+  
+- name: Taylor Fry
+  tier: gold
+  url: https://example.com
+  logo: assets/Taylor_Fry_Logo_edited.avif
+  
+- name: Optiver
+  tier: gold
+  url: https://example.com
+  logo: assets/optiver_logo.avif
+ 

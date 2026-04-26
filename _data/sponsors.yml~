@@ -1,0 +1,14 @@
+- name: Axiom Research
+  tier: gold
+  url: https://example.com
+  logo: /assets/images/sponsors/axiom.png
+
+- name: Cantor Group
+  tier: silver
+  url: https://example.com
+  logo: /assets/images/sponsors/cantor.png
+
+- name: Hilbert
+  tier: bronze
+  url: https://example.com
+  logo: /assets/images/sponsors/hilbert.png

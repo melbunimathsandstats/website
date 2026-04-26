@@ -1,0 +1,62 @@
+<section class="sponsors">
+  {% assign aff = site.data.sponsors | where: "tier", "aff" %}
+  {% assign gold = site.data.sponsors | where: "tier", "gold" %}
+  {% assign silver = site.data.sponsors | where: "tier", "silver" %}
+  {% assign bronze = site.data.sponsors | where: "tier", "bronze" %}
+
+  {% if aff.size > 0 %}
+  <div class="sponsors__tier">
+    <div class="sponsors__tier-label"><span>Affiliated with</span></div>
+    <div class="sponsors__grid sponsors__grid--gold">
+      {% for s in aff %}
+      <a class="sponsors__card sponsors__card--gold" href="{{ s.url }}" target="_blank" rel="noopener">
+        <img class="sponsors__logo sponsors__logo--gold" src="{{ s.logo }}" alt="{{ s.name }}">
+        <span class="sponsors__name">{{ s.name }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if gold.size > 0 %}
+  <div class="sponsors__tier">
+    <div class="sponsors__tier-label"><span>Gold sponsors</span></div>
+    <div class="sponsors__grid sponsors__grid--gold">
+      {% for s in gold %}
+      <a class="sponsors__card sponsors__card--gold" href="{{ s.url }}" target="_blank" rel="noopener">
+        <img class="sponsors__logo sponsors__logo--gold" src="{{ s.logo }}" alt="{{ s.name }}">
+        <span class="sponsors__name">{{ s.name }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if silver.size > 0 %}
+  <div class="sponsors__tier">
+    <div class="sponsors__tier-label"><span>Silver sponsors</span></div>
+    <div class="sponsors__grid sponsors__grid--silver">
+      {% for s in silver %}
+      <a class="sponsors__card sponsors__card--silver" href="{{ s.url }}" target="_blank" rel="noopener">
+        <img class="sponsors__logo sponsors__logo--silver" src="{{ s.logo }}" alt="{{ s.name }}">
+        <span class="sponsors__name">{{ s.name }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if bronze.size > 0 %}
+  <div class="sponsors__tier">
+    <div class="sponsors__tier-label"><span>Bronze sponsors</span></div>
+    <div class="sponsors__grid sponsors__grid--bronze">
+      {% for s in bronze %}
+      <a class="sponsors__card sponsors__card--bronze" href="{{ s.url }}" target="_blank" rel="noopener">
+        <img class="sponsors__logo sponsors__logo--bronze" src="{{ s.logo }}" alt="{{ s.name }}">
+        <span class="sponsors__name sponsors__name--bronze">{{ s.name }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>

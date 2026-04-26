@@ -49,6 +49,10 @@ sponsors3:
     excerpt: Taylor Fry - gold sponsor
 ---
 
+# The MUMS club
+We're a student run club at the University of Melbourne welcoming anyone with an interest in mathematics and statistics!
+We hold regular social, academic and career event to connect you to like-minded peers and bring you interesting mathematical content.
+
 <div style="--teaser-height: 250px">
 {% include feature_row %}
 </div>
@@ -96,8 +100,5 @@ initialView: 'dayGridMonth',
 document.getElementById('cal-frame').srcdoc = html;
 </script>
 ## Our sponsors
-<div style="--teaser-height: 250px">
-{% include feature_row id="sponsors" %}
-{% include feature_row id="sponsors2" %}
-{% include feature_row id="sponsors3" %}
-</div>
+
+{% include sponsors.html  %}
