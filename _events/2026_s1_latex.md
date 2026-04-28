@@ -1,15 +1,13 @@
 ---
 title: "LaTeX workshop"
 layout: single
-event_type: one-off
+header: /assets/WICC1.JPG
 collection: events
-entries_layout: grid
-classes: wide
+event_type: one-off
 location: "Peter Hall"
 date: 30/04/2026
 image: ../assets/latex.png
 ---
-
 Still writing your assignments in Word?
 
 Learn how to professionally typeset your STEM work using LaTeX, a cleaner and more efficient way to write maths.

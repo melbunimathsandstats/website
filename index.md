@@ -99,6 +99,10 @@ initialView: 'dayGridMonth',
 
 document.getElementById('cal-frame').srcdoc = html;
 </script>
-## Our sponsors
+# What's new?
+{% for post in site.posts limit:3 %}
+	{% include post-card.html post=post %} <br />
+{% endfor %}
+# Our sponsors
 
 {% include sponsors.html  %}

@@ -1,0 +1,58 @@
+{% comment %}
+  Usage: {% include post-card.html post=post %}
+  Or inside a loop: {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
+{% endcomment %}
+
+{% assign post = include.post %}
+
+<article class="post-card">
+
+  {% if post.image %}
+    <img
+      class="post-card-image"
+      src="{{ post.image | relative_url }}"
+      alt="{{ post.title | escape }}"
+      loading="lazy"
+    />
+  {% else %}
+    <div class="post-card-image-placeholder">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <path d="M21 15l-5-5L5 21"/>
+      </svg>
+    </div>
+  {% endif %}
+
+  <div class="post-card-body">
+
+    {% if post.categories.first %}
+      <span class="post-category">{{ post.categories.first }}</span>
+    {% elsif post.tags.first %}
+      <span class="post-category">{{ post.tags.first }}</span>
+    {% endif %}
+
+    <h2 class="post-title">{{ post.title | escape }}</h2>
+
+    <div class="post-byline">
+      <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%-d %b %Y" }}
+      </time>
+      <div class="byline-dot"></div>
+      <span class="author-name">{{ post.author }}</span>
+      <div class="byline-dot"></div>
+      <span class="read-time">
+        {% assign minutes = post.content | number_of_words | divided_by: 200 | plus: 1 %}
+        {{ minutes }} min read
+      </span>
+    </div>
+
+    <p class="post-snippet">
+      {{ post.excerpt | strip_html | truncatewords: 100 }}
+    </p>
+    <a class="read-more" href="{{ post.url | relative_url }}">
+  Read more <span class="read-more-arrow">→</span>
+</a>
+
+  </div>
+</article>

@@ -1,0 +1,64 @@
+{% comment %}
+  Usage: {% include post-card.html post=post %}
+  Or inside a loop: {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
+{% endcomment %}
+
+{% assign post = include.post %}
+
+<article class="post-card">
+
+  {% if post.image %}
+    <a href="{{ post.url | relative_url }}">
+      <img
+        class="post-card-image"
+        src="{{ post.image | relative_url }}"
+        alt="{{ post.title | escape }}"
+        loading="lazy"
+      />
+    </a>
+  {% endif %}
+
+  <div class="post-card-body">
+
+    <div class="post-meta">
+      {% if post.categories.first %}
+        <span class="post-category">{{ post.categories.first }}</span>
+      {% elsif post.tags.first %}
+        <span class="post-category">{{ post.tags.first }}</span>
+      {% endif %}
+      <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%-d %b %Y" }}
+      </time>
+    </div>
+
+    <h2 class="post-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    </h2>
+
+    <p class="post-snippet">
+      {% if post.excerpt %}
+        {{ post.excerpt | strip_html | truncatewords: 40 }}
+      {% else %}
+        {{ post.content | strip_html | truncatewords: 40 }}
+      {% endif %}
+    </p>
+
+    <div class="post-footer">
+      {% if post.author %}
+        <div class="post-author">
+          <div class="author-avatar">
+            {{ post.author | split: " " | map: "first" | join: "" | upcase | truncate: 2, "" }}
+          </div>
+          <span class="author-name">{{ post.author }}</span>
+        </div>
+      {% endif %}
+
+      <span class="read-more">
+        {% assign words = post.content | number_of_words %}
+        {% assign minutes = words | divided_by: 200 | plus: 1 %}
+        <span>→</span> {{ minutes }} min read
+      </span>
+    </div>
+
+  </div>
+</article>
